@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node ./dist/prod",
+    "start": "node ./dist/prod/index.js",
     "dev": "ts-node-dev ./src/index.ts",
     "build-dev": "sucrase ./src -d ./dist/dev --transforms typescript,imports",
     "build-prod": "tsc"
