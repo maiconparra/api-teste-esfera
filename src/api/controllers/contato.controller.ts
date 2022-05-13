@@ -2,10 +2,7 @@ import { Request, Response } from "express";
 import { v4 } from "uuid";
 import { ContatosInterface } from "../../business/interfaces/contatos.interface";
 
-import { EnderecoInterface } from "../../business/interfaces/endereco.interface";
-import { UserInterface } from "../../business/interfaces/user.interface";
 import Contatos from "../../database/mappings/contato.mapping";
-import User from "../../database/mappings/user.mapping";
 
 export class ContatoController {
 
@@ -27,6 +24,9 @@ export class ContatoController {
         const user = await Contatos.findAll({
             where: {
                 UserId
+            },
+            include: {
+                association: 'Users'
             }
         });
 
