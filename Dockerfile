@@ -1,6 +1,6 @@
 FROM node:latest
 
-WORKDIR /usr/app
+WORKDIR /
 
 COPY ["package.json", "yarn-lock*", "./"]
 
@@ -14,7 +14,7 @@ RUN yarn install
 
 RUN npm install -g npm@8.9.0
 
-COPY . ./usr/app
+COPY . .
 
 #RUN npx sequelize-cli db:migrate
 
