@@ -1,5 +1,4 @@
 FROM node:latest
-ENV NODE_ENV=development
 
 WORKDIR /usr/app
 
@@ -19,6 +18,6 @@ COPY . ./usr/app
 
 #RUN npx sequelize-cli db:migrate
 
-CMD [ "yarn", "dev" ]
+CMD [ "yarn", "start" ]
 
 EXPOSE 3333
