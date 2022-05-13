@@ -20,4 +20,4 @@ COPY . .
 
 CMD [ "yarn", "start" ]
 
-EXPOSE 3334
+EXPOSE 25060
