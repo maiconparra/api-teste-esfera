@@ -2,7 +2,7 @@ import { Sequelize } from 'sequelize';
 
 import 'dotenv/config';
 
-console.log('username: ', `${process.env.DIALECT}://${process.env.USERDATABASE}:${process.env.PASSWORD}@${process.env.HOST}:${process.env.PORT}/${process.env.DATABASE}`);
+console.log('username: ', `${process.env.DIALECT}://${process.env.USERDATABASE}:${process.env.PASSWORD}@${process.env.HOST}:${process.env.DATABASEPORT}/${process.env.DATABASE}`);
 
 //Mappings
 import User from './mappings/user.mapping';
