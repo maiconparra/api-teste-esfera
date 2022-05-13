@@ -9,7 +9,7 @@ import User from './mappings/user.mapping';
 import Endereco from './mappings/endereco.mapping';
 import Contatos from './mappings/contato.mapping';
 
-const connection = new Sequelize(`${process.env.DIALECT}://${process.env.USERDATABASE}:${process.env.PASSWORD}@${process.env.HOST}:${process.env.PORT}/${process.env.DATABASE}`);
+const connection = new Sequelize(`${process.env.DIALECT}://${process.env.USERDATABASE}:${process.env.PASSWORD}@${process.env.HOST}:${process.env.DATABASEPORT}/${process.env.DATABASE}`);
 
 User.onLoadUser(connection);
 Endereco.onLoadEndereco(connection);
