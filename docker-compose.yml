@@ -1,0 +1,39 @@
+
+  
+version: "3.7"
+services:
+  app: 
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: teste-esfera-api
+    container_name: teste-esfera-api
+    restart: unless-stopped
+    working_dir: /
+    ports: 
+      - "3334:3334"
+    volumes:
+      - ./docker-compose/api:/api-teste-esfera-initapi.d
+    networks:
+      - integration
+  
+  db-develop:
+    image: mysql:8.0
+    container_name: database-teste-esfera 
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: EsferaTesteDevelopment
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_PASSWORD: 12345
+      MYSQL_USER: maiconparra
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    ports: 
+      - "3307:3306"
+    volumes:
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - integration
+
+networks:
+  integration:

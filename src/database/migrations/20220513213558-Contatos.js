@@ -2,23 +2,27 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    return queryInterface.createTable('User', {
+    return queryInterface.createTable('Contatos', {
       id: {
         allowNull: false,
         primaryKey: true,
         type: Sequelize.STRING
       },
-      Nome: {
+      Telefone: {
         allowNull: false,
         type: Sequelize.STRING
       },
-      Sobrenome: {
+      Email: {
         allowNull: false,
         type: Sequelize.STRING
       },
-      CPF: {
-        allowNull: true,
-        type: Sequelize.STRING
+      UserId: {
+        allowNull: false,
+        type: Sequelize.STRING,
+        references: {
+          model: 'User',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
@@ -32,6 +36,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    return queryInterface.dropTable('User');
+    return queryInterface.dropTable('Contatos');
   }
 };

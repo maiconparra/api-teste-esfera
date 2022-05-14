@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `EsferaTesteDevelopment`.`Contatos` (
     `createdAt` TIMESTAMP NOT NULL,
     `updatedAt` TIMESTAMP NULL,
     PRIMARY KEY (`id`),
-    INDEX `fk_Contatos_User_idx` (`UserId` ASC) VISIBLE,
+    INDEX `fk_Contatos_User_idx` (`UserId` ASC),
     CONSTRAINT `fk_Contatos_User`
         FOREIGN KEY (`UserId`)
         REFERENCES `EsferaTesteDevelopment`.`User` (`id`)
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `EsferaTesteDevelopment`.`Endereco` (
   `createdAt` TIMESTAMP NOT NULL,
   `updatedAt` TIMESTAMP NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_Endereco_User_idx` (`UserId` ASC) VISIBLE,
+  INDEX `fk_Endereco_User_idx` (`UserId` ASC),
   CONSTRAINT `fk_Endereco_User`
     FOREIGN KEY (`UserId`)
     REFERENCES `EsferaTesteDevelopment`.`User` (`id`)

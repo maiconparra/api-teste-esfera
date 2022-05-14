@@ -18,6 +18,6 @@ COPY . .
 
 #RUN npx sequelize-cli db:migrate
 
-CMD [ "yarn", "start" ]
+CMD [ "yarn", "dev" ]
 
-EXPOSE 25060
+EXPOSE 3334
